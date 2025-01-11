@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LogComponent } from './discount.component';
+import { DiscountComponent } from './discount.component';
 
 describe('LogComponent', () => {
-  let component: LogComponent;
-  let fixture: ComponentFixture<LogComponent>;
+  let component: DiscountComponent;
+  let fixture: ComponentFixture<DiscountComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LogComponent]
+      imports: [DiscountComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(LogComponent);
+    fixture = TestBed.createComponent(DiscountComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

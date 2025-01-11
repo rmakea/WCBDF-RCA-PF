@@ -22,7 +22,7 @@ interface Discount {
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, NgbModule],
 })
-export class LogComponent implements OnInit {
+export class DiscountComponent implements OnInit {
   @ViewChild('discountModal') discountModal: any;
   listadoDiscounts: Discount[] = [];
   loading = false;
