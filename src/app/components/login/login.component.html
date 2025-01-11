@@ -1,0 +1,70 @@
+<div class="container-fluid min-vh-100" style="background: linear-gradient(135deg, #ffefd5, #ffe4e1);">
+  <div class="row justify-content-center py-5">
+    <div class="col-md-6 col-lg-4">
+      <div class="card border-0 shadow-lg" style="border-radius: 15px; background-color: #fffaf0;">
+        <!-- Header -->
+        <div class="card-header text-white p-4 border-0" style="background-color: #fadadd; border-radius: 15px 15px 0 0;">
+          <h3 class="text-center mb-0 fw-bold" style="color: #8b0000;">Proyecto Final</h3>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body p-4">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <!-- Username field -->
+            <div class="mb-4">
+              <label for="username" class="form-label fw-semibold" style="color: #8b0000;">Usuario</label>
+              <div class="input-group">
+                <span class="input-group-text" style="background-color: #ffe4e1;">
+                  <i class="bi bi-person" style="color: #8b0000;"></i>
+                </span>
+                <input 
+                  placeholder="Ingrese su usuario"
+                  type="text" 
+                  formControlName="username" 
+                  class="form-control form-control-lg shadow-none"
+                  style="border-color: #fadadd;" 
+                  [ngClass]="{ 'is-invalid': submitted && loginForm.get('username')?.errors }" />
+                <div *ngIf="submitted && loginForm.get('username')?.errors" class="invalid-feedback">
+                  <div *ngIf="loginForm.get('username')?.errors?.['required']">El usuario es requerido</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Password field -->
+            <div class="mb-4">
+              <label for="password" class="form-label fw-semibold" style="color: #8b0000;">Contraseña</label>
+              <div class="input-group">
+                <span class="input-group-text" style="background-color: #ffe4e1;">
+                  <i class="bi bi-lock" style="color: #8b0000;"></i>
+                </span>
+                <input 
+                  placeholder="Ingrese su contraseña"
+                  type="password" 
+                  formControlName="password" 
+                  class="form-control form-control-lg shadow-none"
+                  style="border-color: #fadadd;" 
+                  [ngClass]="{ 'is-invalid': submitted && loginForm.get('password')?.errors }" />
+                <div *ngIf="submitted && loginForm.get('password')?.errors" class="invalid-feedback">
+                  <div *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es requerida</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit button -->
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-lg" style="background-color: #fadadd; color: #8b0000;">
+                <span>Ingresar</span>
+                <i class="bi bi-arrow-right ms-2"></i>
+              </button>
+            </div>
+
+            <!-- Error message -->
+            <div *ngIf="error" class="alert mt-4" style="background-color: #ffe4e1; color: #8b0000;">
+              {{error}}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
