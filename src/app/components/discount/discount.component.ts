@@ -1,6 +1,6 @@
 // src/app/components/discount/discount.component.ts
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DiscountsService } from '../../services/logs.service';
+import { DiscountsService } from '../../services/discounts.service';
 import { AuthService } from '../../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -17,8 +17,8 @@ interface Discount {
 
 @Component({
   selector: 'app-discount',
-  templateUrl: './log.component.html',
-  styleUrls: ['./log.component.css'],
+  templateUrl: './discount.component.html',
+  styleUrls: ['./discount.component.css'],
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, NgbModule],
 })
